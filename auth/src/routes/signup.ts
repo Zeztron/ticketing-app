@@ -18,16 +18,12 @@ router.post("/api/users/signup", [
     .withMessage('Password must be between 4 and 20 characters')
 ], async (req: Request, res: Response) => {
   const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    throw new RequestValidationError(errors.array());
-  };
+  if (!errors.isEmpty()) throw new RequestValidationError(errors.array());
 
   const { email, password } = req.body;
   const existingUser = await User.findOne({ email });
 
-  if (existingUser) {
-    throw new BadRequestError('Email in use.');
-  };
+  if (existingUser) throw new BadRequestError('Email in use.');
 
   const user = User.build({ email, password });
   await user.save();
@@ -36,7 +32,7 @@ router.post("/api/users/signup", [
   const userJwt = jwt.sign({
     id: user.id,
     email: user.email
-  }, 'asdf');
+  }, process.env.JWT_KEY!);
 
   // Sote it on session
   req.session = {
