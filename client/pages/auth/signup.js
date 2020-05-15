@@ -1,16 +1,28 @@
+import { useState } from 'react';
+import axios from 'axios';
+
 export default () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onSubmit = async e => {
+    e.preventDefault();
+
+    await axios.post('/api/users/signup', { email, password });
+  };
+
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <h1>Sign up</h1>
       <div className="form-group">
         <label>Email Address</label>
-        <input type="text" className="form-control" />
+        <input value={email} onChange={e => setEmail(e.target.value)} type="text" className="form-control" />
       </div>
       <div className="form-group">
         <label>Password</label>
-        <input type="password" className="form-control" />
+        <input value={password} onChange={e => setPassword(e.target.value)} type="password" className="form-control" />
       </div>
-      <button className="btn btn-primary">Sign Up</button>
+      <button type="submit" className="btn btn-primary">Sign Up</button>
     </form>
   );
 };
