@@ -37,6 +37,6 @@
     "jest": "^26.0.1",
     "mongodb-memory-server": "^6.6.0",
     "supertest": "^4.0.2",
-    "ts-jest": "^25.5.1"
+    "ts-jest": "^26.5.4"
   }
 }
