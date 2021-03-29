@@ -1,6 +1,6 @@
 {
   "name": "@hpgittix/common",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Common code that is shared between services",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
