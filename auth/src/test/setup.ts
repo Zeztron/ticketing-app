@@ -6,7 +6,7 @@ import { app } from '../app';
 declare global {
   namespace NodeJS {
     interface Global {
-      signup(): Promise<string[]>
+      signup(): Promise<string[]>;
     }
   }
 }
@@ -21,7 +21,7 @@ beforeAll(async () => {
 
   await mongoose.connect(mongoUri, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   });
 });
 
@@ -31,7 +31,7 @@ beforeEach(async () => {
 
   for (let collection of collections) {
     await collection.deleteMany({});
-  };
+  }
 });
 
 afterAll(async () => {
@@ -46,10 +46,11 @@ global.signup = async () => {
   const response = await request(app)
     .post('/api/users/signup')
     .send({
-      email, password
+      email,
+      password,
     })
     .expect(201);
-  
+
   const cookie = response.get('Set-Cookie');
   return cookie;
 };
