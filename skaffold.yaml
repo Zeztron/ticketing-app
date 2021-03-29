@@ -12,7 +12,15 @@ build:
       context: auth
       docker:
         dockerfile: Dockerfile
-      sync: 
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: pateltharsh/tickets
+      context: tickets
+      docker:
+        dockerfile: Dockerfile
+      sync:
         manual:
           - src: 'src/**/*.ts'
             dest: .
@@ -20,7 +28,7 @@ build:
       context: client
       docker:
         dockerfile: Dockerfile
-      sync: 
+      sync:
         manual:
           - src: '**/*js'
             dest: .

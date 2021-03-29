@@ -16,7 +16,7 @@ const start = async () => {
   }
 
   app.listen(PORT, () =>
-    console.log(`Auth Service - Listening on Port ${PORT}`)
+    console.log(`Tickets Service - Listening on Port ${PORT}`)
   );
 };
 
