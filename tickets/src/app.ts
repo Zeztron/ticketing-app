@@ -4,7 +4,10 @@ import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
 
 // Middlewares and Errors
-import { errorHandler, NotFoundError } from '@hpgittix/common';
+import { errorHandler, NotFoundError, currentUser } from '@hpgittix/common';
+
+// Routes
+import { createTicketRouter } from './routes/new';
 
 const app = express();
 app.use(json());
@@ -15,6 +18,10 @@ app.use(
     secure: process.env.NODE_ENV !== 'test',
   })
 );
+app.use(currentUser);
+
+// Implementing Routes
+app.use(createTicketRouter);
 
 // Implementing Middlewares
 app.use(errorHandler);
