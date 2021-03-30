@@ -8,6 +8,7 @@ import { errorHandler, NotFoundError, currentUser } from '@hpgittix/common';
 
 // Routes
 import { createTicketRouter } from './routes/new';
+import { showTicketRouter } from './routes/show';
 
 const app = express();
 app.use(json());
@@ -22,6 +23,7 @@ app.use(currentUser);
 
 // Implementing Routes
 app.use(createTicketRouter);
+app.use(showTicketRouter);
 
 // Implementing Middlewares
 app.use(errorHandler);
