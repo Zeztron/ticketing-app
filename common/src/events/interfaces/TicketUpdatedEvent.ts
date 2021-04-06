@@ -1,7 +1,7 @@
 import { Subjects } from '../enums/subjects';
 //Hi
 export interface TicketUpdatedEvent {
-  subject: Subjects.TickerUpdated;
+  subject: Subjects.TicketUpdated;
   data: {
     id: string;
     title: string;
