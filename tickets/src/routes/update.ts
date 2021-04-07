@@ -7,6 +7,8 @@ import {
   NotAuthorizedError,
 } from '@hpgittix/common';
 import { Ticket } from '../models/ticket';
+import { TicketUpdatedPublisher } from '../events/publishers/ticket-updated-publisher';
+import { natsWrapper } from '../nats-wrapper';
 
 const router = express.Router();
 
@@ -30,6 +32,11 @@ router.put(
     ticket.set({ ...req.body });
 
     await ticket.save();
+    new TicketUpdatedPublisher(natsWrapper.client).publish({
+      id: ticket.id,
+      ...ticket,
+    });
+
     res.send(ticket);
   }
 );
