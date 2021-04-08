@@ -7,10 +7,10 @@ import cookieSession from 'cookie-session';
 import { errorHandler, NotFoundError, currentUser } from '@hpgittix/common';
 
 // Routes
-import { createTicketRouter } from './routes/new';
-import { showTicketRouter } from './routes/show';
-import { indexTicketRouter } from './routes/index';
-import { updateTicketRouter } from './routes/update';
+import { indexOrderRouter } from './routes/index';
+import { showOrderRouter } from './routes/show';
+import { newOrderRouter } from './routes/new';
+import { deleteOrderRouter } from './routes/delete';
 
 const app = express();
 app.use(json());
@@ -24,10 +24,10 @@ app.use(
 app.use(currentUser);
 
 // Implementing Routes
-app.use(createTicketRouter);
-app.use(showTicketRouter);
-app.use(indexTicketRouter);
-app.use(updateTicketRouter);
+app.use(indexOrderRouter);
+app.use(showOrderRouter);
+app.use(newOrderRouter);
+app.use(deleteOrderRouter);
 
 // Implementing Middlewares
 app.use(errorHandler);
