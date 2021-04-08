@@ -13,5 +13,6 @@ export * from './middlewares/validate-request';
 export * from './events/Listener';
 export * from './events/Publisher';
 export * from './events/enums/subjects';
+export * from './events/enums/order-status';
 export * from './events/interfaces/TicketCreatedEvent';
 export * from './events/interfaces/TicketUpdatedEvent';
