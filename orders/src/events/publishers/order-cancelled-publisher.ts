@@ -1,5 +1,5 @@
-import { Publisher, OrderCancelled, Subjects } from '@hpgittix/common';
+import { Publisher, OrderCancelledEvent, Subjects } from '@hpgittix/common';
 
-export class OrderCancelledPublisher extends Publisher<OrderCancelled> {
+export class OrderCancelledPublisher extends Publisher<OrderCancelledEvent> {
   subject: Subjects.OrderCancelled = Subjects.OrderCancelled;
 }
