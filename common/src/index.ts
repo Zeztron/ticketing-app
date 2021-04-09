@@ -16,3 +16,5 @@ export * from './events/enums/subjects';
 export * from './events/enums/order-status';
 export * from './events/interfaces/TicketCreatedEvent';
 export * from './events/interfaces/TicketUpdatedEvent';
+export * from './events/interfaces/OrderCreatedEvent';
+export * from './events/interfaces/OrderCancelledEvent';
