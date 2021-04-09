@@ -1,6 +1,6 @@
 import { Subjects } from '../enums/subjects';
 
-export interface OrderCancelled {
+export interface OrderCancelledEvent {
   subject: Subjects.OrderCancelled;
   data: {
     id: string;
