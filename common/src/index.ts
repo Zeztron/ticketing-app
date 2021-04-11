@@ -14,6 +14,7 @@ export * from './events/Listener';
 export * from './events/Publisher';
 export * from './events/enums/subjects';
 export * from './events/enums/order-status';
+export * from './events/enums/queue-group-names';
 export * from './events/interfaces/TicketCreatedEvent';
 export * from './events/interfaces/TicketUpdatedEvent';
 export * from './events/interfaces/OrderCreatedEvent';
