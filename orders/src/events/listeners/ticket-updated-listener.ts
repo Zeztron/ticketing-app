@@ -1,11 +1,15 @@
 import { Message } from 'node-nats-streaming';
-import { Subjects, Listener, TicketUpdatedEvent } from '@hpgittix/common';
+import {
+  Subjects,
+  Listener,
+  TicketUpdatedEvent,
+  queueGroupNames,
+} from '@hpgittix/common';
 import { Ticket } from '../../models/ticket';
-import { queueGroupName } from './queue-group-name';
 
 export class TicketUpdatedListener extends Listener<TicketUpdatedEvent> {
   subject: Subjects.TicketUpdated = Subjects.TicketUpdated;
-  queueGroupName = queueGroupName;
+  queueGroupName = queueGroupNames.ORDERS_SERVICE;
 
   async onMessage(
     data: TicketUpdatedEvent['data'],
