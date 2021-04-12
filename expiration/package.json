@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@hpgittix/common": "^1.0.13",
+    "@hpgittix/common": "^1.0.15",
     "@types/bull": "^3.15.0",
     "bull": "^3.22.0",
     "node-nats-streaming": "^0.3.2",
