@@ -20,3 +20,4 @@ export * from './events/interfaces/TicketUpdatedEvent';
 export * from './events/interfaces/OrderCreatedEvent';
 export * from './events/interfaces/OrderCancelledEvent';
 export * from './events/interfaces/ExpirationCompleteEvent';
+export * from './events/interfaces/PaymentCreatedEvent';
