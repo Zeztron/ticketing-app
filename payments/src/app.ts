@@ -7,6 +7,7 @@ import cookieSession from 'cookie-session';
 import { errorHandler, NotFoundError, currentUser } from '@hpgittix/common';
 
 // Routes
+import { createChargeRouter } from './routes/new';
 
 const app = express();
 app.use(json());
@@ -20,6 +21,7 @@ app.use(
 app.use(currentUser);
 
 // Implementing Routes
+app.use(createChargeRouter);
 
 // Implementing Middlewares
 app.use(errorHandler);
