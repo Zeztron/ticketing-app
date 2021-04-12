@@ -1,6 +1,6 @@
 import { Subjects } from '../enums/subjects';
 
-export interface ExipirationCompleteEvent {
+export interface ExpirationCompleteEvent {
   subject: Subjects.ExpirationComplete;
   data: { orderId: string };
 }
